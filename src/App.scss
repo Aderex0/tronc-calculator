@@ -1,0 +1,337 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
+/* General Settings
+    -------------------------------------------- */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-family: 'Roboto', 'sans-serif';
+  color: #fafafa;
+  font-smooth: always;
+  -webkit-font-smoothing: antialised;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* Variables
+    -------------------------------------------- */
+
+$generic-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 0px 1px,
+  rgba(0, 0, 0, 0.1) 0px 4px 11px;
+$generic-border: 1px solid #f1f1f1;
+$generic-bg: rgba(102, 51, 153, 1);
+
+/* General Mixins
+    -------------------------------------------- */
+
+@mixin centralAlign() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin mediaQuery($from) {
+  @media (min-width: $from) {
+    @content;
+  }
+}
+
+/* App
+    -------------------------------------------- */
+.App {
+  display: grid;
+  width: 100%;
+  height: 100vh;
+  grid-template-areas:
+    'header-area'
+    'tronc-btn'
+    'earnings-btn';
+  // grid-template-rows: 7% 58% 35%;
+}
+
+/* Header
+    -------------------------------------------- */
+header {
+  grid-area: header-area;
+  width: 100%;
+  height: 7vh;
+  min-height: 50px;
+  background-color: $generic-bg;
+  display: grid;
+  grid-template-areas: 'logo . menus';
+  grid-template-columns: 1fr 1fr 1fr;
+  // align-items: center;
+
+  a {
+    width: min-content;
+    display: flex;
+    color: white;
+    text-decoration: none;
+  }
+
+  .logo-grid-area {
+    grid-area: logo;
+    min-height: 45px;
+    margin: 0;
+    display: flex;
+    align-self: center;
+  }
+
+  .logo-text-container {
+    min-height: 40px;
+    align-self: flex-end;
+    display: flex;
+    width: 10%;
+
+    p {
+      margin: 0;
+      height: fit-content;
+      align-self: flex-end;
+      font-size: 1.2em;
+      line-height: 16px;
+      font-family: Poppins;
+    }
+  }
+
+  .menu-area {
+    grid-area: menus;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
+
+/* Front Page Mixins
+    -------------------------------------------- */
+
+@mixin fpInnerContainer() {
+  clip-path: polygon(
+    76% 16.66%,
+    78% 33.32%,
+    81% 49.98%,
+    85% 66.64%,
+    90% 83%,
+    97% 100%,
+    0 100%,
+    0 0,
+    75% 0
+  );
+  background-image: linear-gradient(
+    rgba(102, 51, 153, 0.5) 30%,
+    rgba(102, 51, 153, 1)
+  );
+
+  @include mediaQuery(600px) {
+    width: 60%;
+    max-height: 300px;
+    height: 30vh;
+    min-height: 225px;
+    overflow: hidden;
+    position: relative;
+
+    &:after {
+      background: #fff;
+      content: '';
+      height: 400px;
+      left: -300px;
+      opacity: 0.2;
+      position: absolute;
+      top: -50px;
+      transform: rotate(35deg);
+      transition: all 2s cubic-bezier(0.19, 1, 0.22, 1);
+      width: 50px;
+      z-index: -10;
+    }
+
+    &:hover {
+      clip-path: polygon(
+        100% 16.66%,
+        100% 33.32%,
+        100% 49.98%,
+        100% 66.64%,
+        100% 83%,
+        100% 100%,
+        0 100%,
+        0 0,
+        100% 0
+      );
+      transition: 1s;
+
+      &:after {
+        left: 120%;
+        transition: all 2s cubic-bezier(0.19, 1, 0.22, 1);
+      }
+    }
+  }
+}
+
+@mixin fpTextContainer() {
+  margin-left: 5%;
+  margin-right: 15%;
+  width: 70%;
+}
+
+@mixin frontPageFirstParagraph() {
+  font-size: 1.5em;
+  font-weight: 500;
+  margin-top: 2.5vh;
+  margin-bottom: 1.5vh;
+
+  @include mediaQuery(600px) {
+    font-size: 3em;
+    margin-top: 3vh;
+    margin-bottom: 1vh;
+    // width: 50%;
+  }
+}
+
+@mixin clickHereButton() {
+  height: 2em;
+  width: 40%;
+  background-color: turquoise;
+  border: none;
+  color: black;
+  font-weight: 500;
+  font-size: 0.8em;
+
+  &:active {
+    outline: 3px solid turquoise;
+  }
+
+  &:focus {
+    outline: 3px solid turquoise;
+  }
+
+  @include mediaQuery(600px) {
+    width: 30%;
+    min-height: 34px;
+    height: 1.5em;
+    font-size: 1.4vw;
+
+    &:hover {
+      background-color: white;
+      cursor: pointer;
+    }
+  }
+}
+
+@mixin frontPageSecondParagraph() {
+  font-size: 1em;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  margin-top: 2vh;
+
+  @include mediaQuery(600px) {
+    font-size: 1.2em;
+    width: 90%;
+  }
+}
+
+/* Front Page Tronc Calculator Button
+    -------------------------------------------- */
+
+#mobile-cover-img {
+  grid-area: 1 / 1 / 4 / 2;
+  z-index: -100;
+  background-image: url('./images/front_page_cover_img.jpg');
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#tronc-btn-container {
+  grid-area: tronc-btn;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+
+  @include mediaQuery(600px) {
+    min-height: 275px;
+  }
+
+  .fp-inner-container {
+    @include fpInnerContainer();
+    border-bottom: 3px white solid;
+  }
+
+  .fp-text-container {
+    @include fpTextContainer();
+  }
+
+  h2 {
+    @include frontPageFirstParagraph();
+  }
+  // Click Here Button
+  .tronc-btn {
+    @include clickHereButton();
+  }
+
+  .fp-text-container :nth-child(3) {
+    @include frontPageSecondParagraph();
+  }
+}
+
+/* Front Page Earnings Calculator Button
+    -------------------------------------------- */
+
+#earnings-btn-container {
+  grid-area: earnings-btn;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+
+  @include mediaQuery(600px) {
+    min-height: 225px;
+  }
+
+  .fp-inner-container {
+    @include fpInnerContainer();
+  }
+
+  .fp-inner-container .fp-text-container {
+    @include fpTextContainer();
+  }
+
+  h2 {
+    @include frontPageFirstParagraph();
+  }
+  //Click Here Button
+  .earnings-btn {
+    @include clickHereButton();
+  }
+
+  .fp-text-container :nth-child(3) {
+    @include frontPageSecondParagraph();
+  }
+}
+
+/* Calculators Container
+    -------------------------------------------- */
+
+.calculators-container {
+  grid-area: 2 / 1 / 4 / 2;
+  display: grid;
+  grid-template-areas: 'sidebar calculator';
+  height: 93vh;
+
+  form {
+    background: rgb(214, 214, 214);
+  }
+}
