@@ -15,7 +15,11 @@ export const FrontPage = () => {
           <div className='fp-text-container'>
             <h2>Tronc Calculator</h2>
             <Link to='/calculators'>
-              <button className='tronc-btn' data-testid='tronc-btn'>
+              <button
+                className='tronc-btn'
+                data-testid='tronc-btn'
+                onClick={() => setDisplayCalculatorById(1)}
+              >
                 Click Here
               </button>
             </Link>

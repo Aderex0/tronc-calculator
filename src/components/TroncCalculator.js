@@ -25,7 +25,7 @@ export const TroncCalculator = () => {
   return (
     <>
       <form onSubmit={handleTroncCalculation}>
-        <label>Tronc rate</label>
+        <label for='Tr'>Tronc rate</label>
         <input
           className='tronc-percentage-field'
           data-testid='tronc-percentage-field'
@@ -33,8 +33,9 @@ export const TroncCalculator = () => {
           type='number'
           step='any'
           placeholder='3.75'
+          id='Tr'
         />
-        <label>Service charge</label>
+        <label for='Sc'>Service charge</label>
         <input
           className='service-charge-field'
           data-testid='service-charge-field'
@@ -42,8 +43,9 @@ export const TroncCalculator = () => {
           type='number'
           step='any'
           placeholder='76.40'
+          id='Sc'
         />
-        <label>Checks paid</label>
+        <label for='Cp'>Checks paid</label>
         <input
           className='checks-paid-field'
           data-testid='checks-paid-field'
@@ -51,6 +53,7 @@ export const TroncCalculator = () => {
           type='number'
           step='any'
           placeholder='685.98'
+          id='Cp'
         />
         <input
           className='calculate-tronc-btn'
