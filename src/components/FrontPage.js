@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 export const FrontPage = () => {
   const setDisplayCalculatorById = useContentStore(
-    state => state.setDisplayFrontPage
+    state => state.setDisplayCalculatorById
   )
 
   return (
