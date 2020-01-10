@@ -401,10 +401,9 @@ input[type='submit'] {
   width: 35%;
   font-size: 6vw;
   color: white;
-  font-weight: 200;
-  letter-spacing: 2px;
   border: none;
   margin-bottom: 10px;
+  font-family: 'Poppins';
 
   &:focus {
     outline: 3px solid turquoise;
@@ -582,8 +581,10 @@ input[type='submit'] {
     letter-spacing: 2px;
     border: none;
     margin-bottom: 20px;
+    font-family: 'Poppins';
 
     @include mediaQuery(600px) {
+      height: auto;
       font-size: 2vw;
       width: 30%;
 
