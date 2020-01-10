@@ -399,6 +399,7 @@ input[type='submit'] {
   height: 65px;
   background-color: $generic-bg;
   width: 35%;
+  min-width: fit-content;
   font-size: 6vw;
   color: white;
   border: none;
