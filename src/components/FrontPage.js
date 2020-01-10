@@ -33,7 +33,7 @@ export const FrontPage = () => {
       <div id='earnings-btn-container'>
         <div className='fp-inner-container'>
           <div className='fp-text-container'>
-            <h2>Earnings Calculator</h2>
+            <h2>Earnings Calculator (coming soon)</h2>
             <button
               className='earnings-btn'
               data-testid='earnings-btn'

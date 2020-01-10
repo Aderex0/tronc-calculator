@@ -60,25 +60,28 @@ $generic-bg: rgba(102, 51, 153, 1);
   width: 100%;
   height: 100vh;
   grid-template-areas:
-    'header-area'
-    'tronc-btn'
-    'earnings-btn';
+    'header header'
+    'A1 A2'
+    'B1 B2';
   // grid-template-rows: 7% 58% 35%;
+  grid-template-columns: 325px auto;
 }
 
 /* Header
     -------------------------------------------- */
 header {
-  grid-area: header-area;
+  grid-area: header;
   width: 100%;
   height: 7vh;
   min-height: 50px;
+  z-index: 100;
   background-color: $generic-bg;
   display: grid;
   grid-template-areas: 'logo . menus';
   grid-template-columns: 1fr 1fr 1fr;
+  // position: relative;
+  // transition: 250ms linear;
   // align-items: center;
-
   a {
     width: min-content;
     display: flex;
@@ -248,7 +251,7 @@ header {
     -------------------------------------------- */
 
 #mobile-cover-img {
-  grid-area: 1 / 1 / 4 / 2;
+  grid-area: 1 / 1 / 4 / 3;
   z-index: -100;
   background-image: url('./images/front_page_cover_img.jpg');
   background-position: top;
@@ -257,7 +260,7 @@ header {
 }
 
 #tronc-btn-container {
-  grid-area: tronc-btn;
+  grid-area: 2 / 1 / 3 / 3;
   width: 100%;
   display: flex;
   align-items: flex-end;
@@ -292,7 +295,7 @@ header {
     -------------------------------------------- */
 
 #earnings-btn-container {
-  grid-area: earnings-btn;
+  grid-area: 3 / 1 / 4 / 3;
   width: 100%;
   display: flex;
   align-items: flex-start;
@@ -326,8 +329,12 @@ header {
     -------------------------------------------- */
 
 .calculators-container {
-  grid-area: 2 / 1 / 4 / 2;
-  height: 93vh;
+  grid-area: 2 / 1 / 4 / 3;
+
+  @include mediaQuery(600px) {
+    grid-area: 2 / 2 / 4 / 3;
+    border-left: rgba(102, 51, 153, 0.3) 1px solid;
+  }
 }
 
 /* Tronc Calculator form
@@ -420,20 +427,22 @@ input[type='submit'] {
     -------------------------------------------- */
 
 .sidebar-container {
-  height: 100%;
+  grid-area: 2 / 1 / 4 / 2;
   width: 250px;
+  height: 100%;
   position: fixed;
   z-index: 1;
-  left: -250px;
   transition: 250ms linear;
   border-right: rgba(102, 51, 153, 0.3) 1px solid;
   background-color: white;
+  top: 0;
 
   @include mediaQuery(600px) {
-    left: 0px;
+    left: 0px !important;
     width: 325px;
     position: relative;
-    float: left;
+    border-right: none;
+    height: 93vh;
   }
 
   li {
@@ -454,6 +463,11 @@ input[type='submit'] {
     }
 
     &:nth-child(1) {
+      margin-top: 50px;
+
+      @include mediaQuery(600px) {
+        margin-top: 0px;
+      }
       &:before {
         box-shadow: none;
       }
@@ -490,7 +504,7 @@ input[type='submit'] {
   }
 
   .toggle-btn {
-    margin-top: 20px;
+    margin-top: 70px;
     position: absolute;
     left: 250px;
     height: 50px;
@@ -551,9 +565,10 @@ input[type='submit'] {
     }
   }
 
+  //REfresh button
   button {
     height: 45px;
-    background-color: turquoise;
+    background-color: $generic-bg;
     width: 35%;
     font-size: 6vw;
     color: white;
@@ -563,9 +578,19 @@ input[type='submit'] {
     margin-bottom: 20px;
 
     @include mediaQuery(600px) {
-      height: auto;
-      font-size: 3vw;
+      font-size: 2vw;
       width: 30%;
+
+      &:hover {
+        background-color: turquoise;
+        cursor: pointer;
+      }
+
+      &:active {
+        background-color: white;
+        color: black;
+        outline: 3px solid turquoise;
+      }
     }
   }
 }

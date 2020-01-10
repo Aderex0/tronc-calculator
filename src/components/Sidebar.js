@@ -11,14 +11,26 @@ export const Sidebar = () => {
 
   const toggleSidebar = () => {
     const btn = document.getElementsByClassName('sidebar-container')[0]
+    const header = document.getElementsByTagName('header')[0]
+    const calculators = document.getElementsByClassName(
+      'calculators-container'
+    )[0]
 
     btn.style.left === '-250px'
       ? (btn.style.left = '0px')
       : (btn.style.left = '-250px')
+
+    header.style.position === 'fixed'
+      ? (header.style.position = 'relative')
+      : (header.style.position = 'fixed')
+
+    calculators.style.marginTop === '50px'
+      ? (calculators.style.marginTop = '0px')
+      : (calculators.style.marginTop = '50px')
   }
 
   return (
-    <div className='sidebar-container'>
+    <div className='sidebar-container' style={{ left: '-250px' }}>
       <div
         className='toggle-btn'
         data-testid='sidebar-action'

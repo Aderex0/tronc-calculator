@@ -10,13 +10,15 @@ export const Calculators = () => {
   )
 
   return (
-    <div className='calculators-container'>
+    <>
       <Sidebar />
-      {displayCalculatorId === 1 ? (
-        <TroncCalculator />
-      ) : displayCalculatorId === 2 ? (
-        <EarningsCalculator />
-      ) : null}
-    </div>
+      <div className='calculators-container'>
+        {displayCalculatorId === 1 ? (
+          <TroncCalculator />
+        ) : displayCalculatorId === 2 ? (
+          <EarningsCalculator />
+        ) : null}
+      </div>
+    </>
   )
 }

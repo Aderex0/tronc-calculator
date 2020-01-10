@@ -12,9 +12,9 @@ export const Results = ({
 
   const resetTroncCalculator = () => {
     setDisplayResult(false)
-    setTroncPercentage('')
-    setServiceCharge('')
-    setChecksPaid('')
+    setTroncPercentage(3.75)
+    setServiceCharge(0)
+    setChecksPaid(0)
   }
 
   return (

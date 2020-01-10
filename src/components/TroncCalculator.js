@@ -5,7 +5,7 @@ import useContentStore from '../store/ContentStore'
 
 export const TroncCalculator = () => {
   //Controlled Form >> start
-  const [troncPercent, setTroncPercent] = useState(0)
+  const [troncPercent, setTroncPercent] = useState(3.75)
   const handleTroncPercent = e => setTroncPercent(parseFloat(e.target.value))
 
   const [serviceCharge, setServiceCharge] = useState(0)
