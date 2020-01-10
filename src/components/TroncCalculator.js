@@ -4,7 +4,7 @@ import useCalculatorStore from '../store/CalculatorStore'
 import useContentStore from '../store/ContentStore'
 
 export const TroncCalculator = () => {
-  //Controlled Form >> start
+  //Controlled Form ---> START
   const [troncPercent, setTroncPercent] = useState(3.75)
   const handleTroncPercent = e => setTroncPercent(parseFloat(e.target.value))
 
@@ -13,14 +13,15 @@ export const TroncCalculator = () => {
 
   const [checksPaid, setChecksPaid] = useState(0)
   const handleChecksPaid = e => setChecksPaid(parseFloat(e.target.value))
-  // Controlled Form >> end
+  // Controlled Form ---> END
 
-  // STATE
+  // State ---> START
   const setTroncCalculation = useCalculatorStore(
     state => state.setTroncCalculation
   )
   const setDisplayResult = useContentStore(state => state.setDisplayResult)
   const displayResult = useContentStore(state => state.displayResult)
+  // State ---> END
 
   const handleTroncCalculation = event => {
     event.preventDefault()
@@ -70,7 +71,9 @@ export const TroncCalculator = () => {
           type='submit'
           value='Calculate!'
           step='any'
-          onClick={() => setDisplayResult(true)}
+          onClick={() => {
+            setDisplayResult(true)
+          }}
         />
       </form>
       {displayResult && (

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import useCalculatorStore from '../store/CalculatorStore'
 import useContentStore from '../store/ContentStore'
 
@@ -7,6 +7,10 @@ export const Results = ({
   setServiceCharge,
   setChecksPaid
 }) => {
+  useEffect(() => {
+    window.scrollTo(0, 1000)
+  }, [])
+
   const troncCalculation = useCalculatorStore(state => state.troncCalculation)
   const setDisplayResult = useContentStore(state => state.setDisplayResult)
 
