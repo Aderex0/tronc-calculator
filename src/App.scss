@@ -341,6 +341,9 @@ header {
     -------------------------------------------- */
 
 form {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   height: fit-content;
   display: flex;
   flex-direction: column;
