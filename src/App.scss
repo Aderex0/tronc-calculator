@@ -341,9 +341,6 @@ header {
     -------------------------------------------- */
 
 form {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
   height: fit-content;
   display: flex;
   flex-direction: column;
@@ -367,6 +364,12 @@ label {
   @include mediaQuery(600px) {
     font-size: 3vw;
   }
+}
+
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 input[type='number'] {
