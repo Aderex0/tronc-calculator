@@ -14,7 +14,7 @@ export const FrontPage = () => {
         <div className='fp-inner-container'>
           <div className='fp-text-container'>
             <h2>Tronc Calculator</h2>
-            <Link to='/calculators'>
+            <Link to='/tools'>
               <button
                 className='tronc-btn'
                 data-testid='tronc-btn'
@@ -33,14 +33,16 @@ export const FrontPage = () => {
       <div id='earnings-btn-container'>
         <div className='fp-inner-container'>
           <div className='fp-text-container'>
-            <h2>Earnings Calculator (coming soon)</h2>
-            <button
-              className='earnings-btn'
-              data-testid='earnings-btn'
-              onClick={() => setDisplayCalculatorById(2)}
-            >
-              Click Here
-            </button>
+            <h2>Earnings Calculator</h2>
+            <Link to='tools'>
+              <button
+                className='earnings-btn'
+                data-testid='earnings-btn'
+                onClick={() => setDisplayCalculatorById(2)}
+              >
+                Click Here
+              </button>
+            </Link>
             <p>
               Calculate your total earnings; hourly pay, tronc and cash tips
             </p>

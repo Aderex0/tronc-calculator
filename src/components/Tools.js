@@ -4,7 +4,7 @@ import useContentStore from '../store/ContentStore'
 import { EarningsCalculator } from './EarningsCalculator'
 import { Sidebar } from './Sidebar'
 
-export const Calculators = () => {
+export const Tools = () => {
   const displayCalculatorId = useContentStore(
     state => state.displayCalculatorId
   )
@@ -12,7 +12,7 @@ export const Calculators = () => {
   return (
     <>
       <Sidebar />
-      <div className='calculators-container'>
+      <div className='tools-container'>
         {displayCalculatorId === 1 ? (
           <TroncCalculator />
         ) : displayCalculatorId === 2 ? (

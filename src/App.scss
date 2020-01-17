@@ -337,7 +337,7 @@ header {
   }
 }
 
-/* Tronc Calculator form
+/* Tronc Calculator form \ Earnings Calculator form
     -------------------------------------------- */
 
 form {
@@ -482,7 +482,6 @@ input[type='submit'] {
     @include mediaQuery(600px) {
       &:hover {
         cursor: pointer;
-        background-color: rgba(64, 224, 208, 0.2);
 
         &:nth-child(1) {
           cursor: default;

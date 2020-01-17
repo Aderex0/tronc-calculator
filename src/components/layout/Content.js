@@ -1,6 +1,6 @@
 import React from 'react'
 import { FrontPage } from '../FrontPage'
-import { Calculators } from '../Calculators'
+import { Tools } from '../Tools'
 import { Route, withRouter } from 'react-router-dom'
 
 export const Content = () => {
@@ -13,8 +13,8 @@ export const Content = () => {
       />
       <Route
         exact
-        path='/calculators'
-        render={routerProps => <Calculators {...routerProps} />}
+        path='/tools'
+        render={routerProps => <Tools {...routerProps} />}
       />
     </>
   )

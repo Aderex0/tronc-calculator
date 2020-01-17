@@ -1,19 +1,21 @@
 import React, { useState } from 'react'
 import { Results } from './Results'
+import { useCalculator } from '../hooks/useCalculator'
 import useCalculatorStore from '../store/CalculatorStore'
 import useContentStore from '../store/ContentStore'
 
 export const TroncCalculator = () => {
-  //Controlled Form ---> START
-  const [troncPercent, setTroncPercent] = useState(3.75)
-  const handleTroncPercent = e => setTroncPercent(parseFloat(e.target.value))
-
-  const [serviceCharge, setServiceCharge] = useState(0)
-  const handleServiceCharge = e => setServiceCharge(parseFloat(e.target.value))
-
-  const [checksPaid, setChecksPaid] = useState(0)
-  const handleChecksPaid = e => setChecksPaid(parseFloat(e.target.value))
-  // Controlled Form ---> END
+  const {
+    troncPercent,
+    setTroncPercent,
+    handleTroncPercent,
+    serviceCharge,
+    setServiceCharge,
+    handleServiceCharge,
+    checksPaid,
+    setChecksPaid,
+    handleChecksPaid
+  } = useCalculator()
 
   // State ---> START
   const setTroncCalculation = useCalculatorStore(

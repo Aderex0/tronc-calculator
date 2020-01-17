@@ -12,9 +12,15 @@ describe('Visits the website, chooses tronc calculator, return results and refre
   })
 
   it('enters tronc fields, calculates the tronc and show the results component', () => {
-    cy.get('[data-testid="tronc-percentage-field"]').type(troncPercentage)
-    cy.get('[data-testid="service-charge-field"]').type(serviceCharge)
-    cy.get('[data-testid="checks-paid-field"]').type(checksPaid)
+    cy.get('[data-testid="tronc-percentage-field"]')
+      .clear()
+      .type(troncPercentage)
+    cy.get('[data-testid="service-charge-field"]')
+      .clear()
+      .type(serviceCharge)
+    cy.get('[data-testid="checks-paid-field"]')
+      .clear()
+      .type(checksPaid)
     cy.get('[data-testid="remaining-service').should('not.exist')
     cy.get('[data-testid="calculate-tronc-btn"]').click()
     cy.get('[data-testid="remaining-service').contains(

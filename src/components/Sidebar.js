@@ -44,7 +44,6 @@ export const Sidebar = () => {
           data-testid='sidebar-tronc-click'
           onClick={() => {
             setDisplayCalculatorById(1)
-            // toggleSidebar()
           }}
         >
           <span>
@@ -57,7 +56,6 @@ export const Sidebar = () => {
             <GiReceiveMoney size='30px' />
           </span>
           <p>Earnings Calculator</p>
-          <p style={{ fontSize: '1vw' }}> (coming soon)</p>
         </li>
       </ul>
     </div>
