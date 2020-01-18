@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
 import { DateTimePicker } from '@material-ui/pickers'
@@ -17,9 +17,11 @@ const styles = {
     textAlignLast: 'center'
   }
 }
-const useDateTime = ({ classes }) => (
+const useDateTime = ({ classes, handleChange, value }) => (
   <MuiPickersUtilsProvider utils={MomentUtils}>
     <DateTimePicker
+      value={value}
+      onChange={handleChange}
       autoOk
       ampm={false}
       InputProps={{ className: classes.input, disableUnderline: true }}

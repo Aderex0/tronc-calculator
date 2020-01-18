@@ -79,9 +79,7 @@ header {
   display: grid;
   grid-template-areas: 'logo . menus';
   grid-template-columns: 1fr 1fr 1fr;
-  // position: relative;
-  // transition: 250ms linear;
-  // align-items: center;
+
   a {
     width: min-content;
     display: flex;
@@ -451,6 +449,14 @@ input[type='submit'] {
     height: 93vh;
   }
 
+  a {
+    text-decoration: none;
+  }
+
+  ul {
+    margin-top: 70px;
+  }
+
   li {
     color: black;
     width: 100%;
@@ -468,25 +474,9 @@ input[type='submit'] {
       position: absolute;
     }
 
-    &:nth-child(1) {
-      margin-top: 50px;
-
-      @include mediaQuery(600px) {
-        margin-top: 0px;
-      }
-      &:before {
-        box-shadow: none;
-      }
-    }
-
     @include mediaQuery(600px) {
       &:hover {
         cursor: pointer;
-
-        &:nth-child(1) {
-          cursor: default;
-          background-color: white;
-        }
       }
     }
 
@@ -500,11 +490,6 @@ input[type='submit'] {
     span {
       height: 100%;
       margin-right: 6%;
-    }
-
-    &:nth-child(1) {
-      height: 2.6vh;
-      box-shadow: none;
     }
   }
 

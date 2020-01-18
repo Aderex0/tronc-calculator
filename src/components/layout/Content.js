@@ -11,11 +11,7 @@ export const Content = () => {
         path='/'
         render={routerProps => <FrontPage {...routerProps} />}
       />
-      <Route
-        exact
-        path='/tools'
-        render={routerProps => <Tools {...routerProps} />}
-      />
+      <Route path='/tools' render={routerProps => <Tools {...routerProps} />} />
     </>
   )
 }

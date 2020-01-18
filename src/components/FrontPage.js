@@ -1,12 +1,7 @@
 import React from 'react'
-import useContentStore from '../store/ContentStore'
 import { Link } from 'react-router-dom'
 
 export const FrontPage = () => {
-  const setDisplayCalculatorById = useContentStore(
-    state => state.setDisplayCalculatorById
-  )
-
   return (
     <>
       <div id='mobile-cover-img'></div>
@@ -14,19 +9,12 @@ export const FrontPage = () => {
         <div className='fp-inner-container'>
           <div className='fp-text-container'>
             <h2>Tronc Calculator</h2>
-            <Link to='/tools'>
-              <button
-                className='tronc-btn'
-                data-testid='tronc-btn'
-                onClick={() => setDisplayCalculatorById(1)}
-              >
+            <Link to='tools/tronc-calculator'>
+              <button className='tronc-btn' data-testid='tronc-btn'>
                 Click Here
               </button>
             </Link>
-            <p>
-              A tronc calculator to easily calculate the remaining service
-              charge
-            </p>
+            <p>A tronc calculator to calculate the remaining service</p>
           </div>
         </div>
       </div>
@@ -34,12 +22,8 @@ export const FrontPage = () => {
         <div className='fp-inner-container'>
           <div className='fp-text-container'>
             <h2>Earnings Calculator</h2>
-            <Link to='tools'>
-              <button
-                className='earnings-btn'
-                data-testid='earnings-btn'
-                onClick={() => setDisplayCalculatorById(2)}
-              >
+            <Link to='tools/earnings-calculator'>
+              <button className='earnings-btn' data-testid='earnings-btn'>
                 Click Here
               </button>
             </Link>

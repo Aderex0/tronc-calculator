@@ -13,11 +13,12 @@ export const useCalculator = () => {
   const [cashTips, setCashTips] = useState(0)
   const handleCashTips = e => setCashTips(parseFloat(e.target.value))
 
-  const [hoursStart, setHoursStart] = useState(0)
-  const handleHoursStart = e => setHoursStart(parseFloat(e.target.value))
+  const [hourlyRate, setHourlyRate] = useState(0)
+  const handleHourlyRate = e => setHourlyRate(parseFloat(e.target.value))
 
-  const [hoursEnd, setHoursEnd] = useState(0)
-  const handleHoursEnd = e => setHoursEnd(parseFloat(e.target.value))
+  const [shiftStart, setShiftStart] = useState(new Date())
+
+  const [shiftEnd, setShiftEnd] = useState(new Date())
 
   return {
     troncPercent,
@@ -32,11 +33,12 @@ export const useCalculator = () => {
     cashTips,
     setCashTips,
     handleCashTips,
-    hoursStart,
-    setHoursStart,
-    handleHoursStart,
-    hoursEnd,
-    setHoursEnd,
-    handleHoursEnd
+    hourlyRate,
+    setHourlyRate,
+    handleHourlyRate,
+    shiftStart,
+    setShiftStart,
+    shiftEnd,
+    setShiftEnd
   }
 }

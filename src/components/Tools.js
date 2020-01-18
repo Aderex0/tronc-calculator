@@ -1,23 +1,24 @@
 import React from 'react'
 import { TroncCalculator } from './TroncCalculator'
-import useContentStore from '../store/ContentStore'
 import { EarningsCalculator } from './EarningsCalculator'
 import { Sidebar } from './Sidebar'
+import { Route } from 'react-router-dom'
 
 export const Tools = () => {
-  const displayCalculatorId = useContentStore(
-    state => state.displayCalculatorId
-  )
-
   return (
     <>
       <Sidebar />
       <div className='tools-container'>
-        {displayCalculatorId === 1 ? (
-          <TroncCalculator />
-        ) : displayCalculatorId === 2 ? (
-          <EarningsCalculator />
-        ) : null}
+        <Route
+          exact
+          path='/tools/tronc-calculator'
+          render={routerProps => <TroncCalculator {...routerProps} />}
+        />
+        <Route
+          exact
+          path='/tools/earnings-calculator'
+          render={routerProps => <EarningsCalculator {...routerProps} />}
+        />
       </div>
     </>
   )
