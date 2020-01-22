@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import useCalculatorStore from '../store/CalculatorStore'
 import useContentStore from '../store/ContentStore'
 
-export const Results = ({
+export const TroncResults = ({
   setTroncPercentage,
   setServiceCharge,
   setChecksPaid

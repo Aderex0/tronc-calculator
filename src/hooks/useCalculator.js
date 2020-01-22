@@ -13,7 +13,7 @@ export const useCalculator = () => {
   const [cashTips, setCashTips] = useState(0)
   const handleCashTips = e => setCashTips(parseFloat(e.target.value))
 
-  const [hourlyRate, setHourlyRate] = useState(0)
+  const [hourlyRate, setHourlyRate] = useState(8.21)
   const handleHourlyRate = e => setHourlyRate(parseFloat(e.target.value))
 
   const [shiftStart, setShiftStart] = useState(new Date())

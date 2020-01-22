@@ -19,6 +19,7 @@ export const Sidebar = () => {
       ? (header.style.position = 'relative')
       : (header.style.position = 'fixed')
 
+    //when clicking sidebar, header becomes 'fixed', thus moving the tools container up. This prevents it
     tools.style.marginTop === '50px'
       ? (tools.style.marginTop = '0px')
       : (tools.style.marginTop = '50px')

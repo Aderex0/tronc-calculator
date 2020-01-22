@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
 import { DateTimePicker } from '@material-ui/pickers'
 import { MuiPickersUtilsProvider } from '@material-ui/pickers'
+import { KeyboardDateTimePicker } from '@material-ui/pickers'
 import MomentUtils from '@date-io/moment'
 
 const styles = {
@@ -17,14 +18,19 @@ const styles = {
     textAlignLast: 'center'
   }
 }
-const useDateTime = ({ classes, handleChange, value }) => (
+const useDateTime = ({ classes, handleChange, value, testId }) => (
   <MuiPickersUtilsProvider utils={MomentUtils}>
-    <DateTimePicker
+    <KeyboardDateTimePicker
+      data-testid={testId}
       value={value}
       onChange={handleChange}
       autoOk
       ampm={false}
-      InputProps={{ className: classes.input, disableUnderline: true }}
+      InputProps={{
+        className: classes.input,
+        disableUnderline: true
+      }}
+      format='DD/MM/YYYY HH:mm'
     />
   </MuiPickersUtilsProvider>
 )

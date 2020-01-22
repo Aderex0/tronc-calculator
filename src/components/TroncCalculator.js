@@ -1,5 +1,5 @@
 import React from 'react'
-import { Results } from './Results'
+import { TroncResults } from './TroncResults'
 import { useCalculator } from '../hooks/useCalculator'
 import useCalculatorStore from '../store/CalculatorStore'
 import useContentStore from '../store/ContentStore'
@@ -37,6 +37,7 @@ export const TroncCalculator = () => {
   return (
     <>
       <form onSubmit={handleTroncCalculation}>
+        <h2>Tronc calculator</h2>
         <label id='Tr'>Tronc rate</label>
         <input
           className='tronc-percentage-field'
@@ -79,7 +80,7 @@ export const TroncCalculator = () => {
         />
       </form>
       {displayResult && (
-        <Results
+        <TroncResults
           setTroncPercentage={setTroncPercent}
           setServiceCharge={setServiceCharge}
           setChecksPaid={setChecksPaid}

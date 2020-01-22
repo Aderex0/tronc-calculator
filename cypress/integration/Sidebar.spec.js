@@ -1,11 +1,20 @@
 import { GiCyberEye } from 'react-icons/gi'
 
-const url = 'http://localhost:3000/calculators'
+const url = 'http://localhost:3000/tools'
 
-describe('visits the calculators page and checks the sidebar', () => {
-  it('visits the url and opens the sidebar to find 2 calculators', () => {
+describe('visits the tools page and checks if links are working', () => {
+  it('visits the url, clicks and opens tronc calculator', () => {
     cy.visit(url)
-    // need to check mobile cy.get('[data-testid="sidebar-action"').click()
     cy.get('[data-testid="sidebar-tronc-click"]').click()
+    cy.get('form')
+      .children()
+      .should('have.length', 8)
+  })
+
+  it('clicks and opens earnings calculator', () => {
+    cy.get('[data-testid="sidebar-earnings-click"]').click()
+    cy.get('form')
+      .children()
+      .should('have.length', 16)
   })
 })

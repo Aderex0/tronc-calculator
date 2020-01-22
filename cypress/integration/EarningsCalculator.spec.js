@@ -3,10 +3,14 @@ import { GiCyberEye } from 'react-icons/gi'
 const url = 'http://localhost:3000'
 
 describe('Visits the website, clicks on earnings calculator, calculates total earnings and refreshes', () => {
-  const troncPercentage = (3.75).toFixed(2)
-  const checksPaid = (1543.59).toFixed(2)
-  const serviceCharge = (165.4).toFixed(2)
-  const sales = checksPaid - serviceCharge
+  const troncPercentage = 3.75
+  const checksPaid = 1543.59
+  const serviceCharge = 165.4
+  const cashTips = 31.0
+  const hourlyRate = 8.21
+  const sales = parseFloat(checksPaid - serviceCharge)
+  const tronc = parseFloat(serviceCharge - (sales / 100) * troncPercentage)
+  const hourlyPay = parseFloat((430 / 60) * hourlyRate)
 
   it('enters all the earnings input fields correctly and gets the result', () => {
     cy.visit(url)
@@ -20,19 +24,22 @@ describe('Visits the website, clicks on earnings calculator, calculates total ea
     cy.get('[data-testid="earnings-checks-paid-field"]')
       .clear()
       .type(checksPaid)
-    cy.get('[data-testid="earnings-checks-paid-field"]')
+    cy.get('[data-testid="earnings-cash-tips"]')
       .clear()
-      .type()
-    cy.get('[data-testid="earnings-checks-paid-field"]')
+      .type(cashTips)
+    cy.get('[data-testid="earnings-hourly-rate"]')
       .clear()
-      .type()
-    cy.get('[data-testid="earnings-checks-paid-field"]')
+      .type(hourlyRate)
+    cy.get('[data-testid="earnings-shift-start"] > div:first > input')
       .clear()
-      .type()
-    // cy.get('[data-testid="remaining-service').should('not.exist')
-    // cy.get('[data-testid="calculate-tronc-btn"]').click()
-    // cy.get('[data-testid="remaining-service').contains(
-    //   (serviceCharge - (sales / 100) * troncPercentage).toFixed(2)
-    // )
+      .type('22/01/2020 17:00')
+    cy.get('[data-testid="earnings-shift-end"] > div:first > input')
+      .clear()
+      .type('23/01/2020 00:10')
+    cy.get('[data-testid="total-earnings').should('not.exist')
+    cy.get('[data-testid="calculate-earnings-btn"]').click()
+    cy.get('[data-testid="total-earnings').contains(
+      (tronc + cashTips + hourlyPay).toFixed(2)
+    )
   })
 })
