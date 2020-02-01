@@ -1,4 +1,4 @@
-import { GiCyberEye } from 'react-icons/gi'
+import cypress from 'cypress'
 
 const url = 'http://localhost:3000/tools'
 

@@ -1,10 +1,12 @@
+import cypress from 'cypress'
+
 const url = 'http://localhost:3000'
 
 describe('Visits the website, chooses tronc calculator, return results and refreshes', () => {
-  const troncPercentage = (3.75).toFixed(2)
-  const checksPaid = (1543.59).toFixed(2)
-  const serviceCharge = (165.4).toFixed(2)
-  const sales = checksPaid - serviceCharge
+  const troncPercentage = '3.75'
+  const checksPaid = '1543.59'
+  const serviceCharge = '165.40'
+  const sales = parseInt(checksPaid) - parseInt(serviceCharge)
 
   it('finds two buttons clicks tronc calculator button', () => {
     cy.visit(url)
@@ -24,7 +26,10 @@ describe('Visits the website, chooses tronc calculator, return results and refre
     cy.get('[data-testid="remaining-service').should('not.exist')
     cy.get('[data-testid="calculate-tronc-btn"]').click()
     cy.get('[data-testid="remaining-service').contains(
-      (serviceCharge - (sales / 100) * troncPercentage).toFixed(2)
+      (
+        parseInt(serviceCharge) -
+        (sales / 100) * parseInt(troncPercentage)
+      ).toFixed(2)
     )
   })
 

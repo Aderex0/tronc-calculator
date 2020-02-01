@@ -1,3 +1,5 @@
+import cypress from 'cypress'
+
 const url = 'http://localhost:3000'
 
 describe('Visits the website and checks if frontpage buttons works', () => {

@@ -1,4 +1,4 @@
-import cypress from 'Cypress'
+import cypress from 'cypress'
 
 const url = 'http://localhost:3000'
 
@@ -40,7 +40,7 @@ describe('Visits the website, clicks on earnings calculator, calculates total ea
     cy.get('[data-testid="total-earnings').should('not.exist')
     cy.get('[data-testid="calculate-earnings-btn"]').click()
     cy.get('[data-testid="total-earnings').contains(
-      (tronc + cashTips + hourlyPay).toFixed(2)
+      (tronc + parseInt(cashTips) + hourlyPay).toFixed(2)
     )
   })
 })

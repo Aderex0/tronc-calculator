@@ -25,7 +25,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "e2e": "cypress open",
-    "lint": "eslint src/**/*.js cypress/**/*.js"
+    "lint": "eslint cypress/**/*.js src/**/*.js"
   },
   "eslintConfig": {
     "extends": "react-app"
