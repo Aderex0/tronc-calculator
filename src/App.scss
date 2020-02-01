@@ -63,7 +63,7 @@ $generic-bg: rgba(102, 51, 153, 1);
     'A1 A2'
     'B1 B2';
   // grid-template-rows: 7% 58% 35%;
-  grid-template-columns: 325px auto;
+  grid-template-columns: 320px 1fr;
 
   .tools-container {
     height: inherit;
@@ -328,11 +328,11 @@ header {
   }
 }
 
-/* Calculators Container
+/* Tools Container
     -------------------------------------------- */
 
-.calculators-container {
-  grid-area: 2 / 1 / 4 / 3;
+.tools-container {
+  grid-area: 2 / 1 / 5 / 3;
 
   @include mediaQuery(600px) {
     grid-area: 2 / 2 / 4 / 3;
