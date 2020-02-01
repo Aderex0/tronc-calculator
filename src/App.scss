@@ -350,6 +350,7 @@ form {
   align-items: center;
   justify-content: flex-start;
   padding-top: 20px;
+  width: 100%;
 
   @include mediaQuery(600px) {
     align-items: flex-start;
