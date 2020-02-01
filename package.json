@@ -24,17 +24,14 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "e2e": "cypress open"
+    "e2e": "cypress open",
+    "lint": "eslint src/**/*.js cypress/**/*.js"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
   "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
+    "production": [">0.2%", "not dead", "not op_mini all"],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
@@ -42,6 +39,9 @@
     ]
   },
   "devDependencies": {
-    "cypress": "^3.8.1"
+    "babel-eslint": "^10.0.3",
+    "cypress": "^3.8.1",
+    "eslint": "^6.8.0",
+    "eslint-plugin-cypress": "^2.8.1"
   }
 }
