@@ -1,8 +1,8 @@
-import cypress from 'cypress'
-
-const url = 'http://localhost:3000/tools'
+/// <reference types="cypress" />
 
 describe('visits the tools page and checks if links are working', () => {
+  const url = 'http://localhost:3000/tools'
+
   it('visits the url, clicks and opens tronc calculator', () => {
     cy.visit(url)
     cy.get('[data-testid="sidebar-tronc-click"]').click()
