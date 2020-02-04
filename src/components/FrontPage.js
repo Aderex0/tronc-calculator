@@ -51,10 +51,12 @@ export const FrontPage = () => {
       </div>
       <div className='footer-container'>
         <div className='footer-options'>
-          <h3>Site map</h3>
-          <p>Tronc Calculator</p>
-          <p>Earnings Calculator</p>
-          <p>Contact us</p>
+          <ul>
+            <li>Site map</li>
+            <li>> Tronc Calculator</li>
+            <li>> Earnings Calculator</li>
+            <li>> Contact us</li>
+          </ul>
         </div>
         <div className='footer-logo'>
           <p>

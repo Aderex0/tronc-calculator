@@ -374,7 +374,7 @@ header {
   grid-area: footer;
   width: 100%;
   background-color: black;
-  height: 20vh;
+  height: 35vh;
   display: flex;
 
   .footer-options {
@@ -383,39 +383,35 @@ header {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    justify-content: flex-end;
 
-    :nth-child(1) {
-      margin-top: 7%;
-      margin-bottom: 10%;
-      color: white;
-      margin-left: 10%;
-      font-weight: 200;
-      width: 100%;
-      border-bottom: solid 1px white;
-    }
+    ul {
+      list-style-type: none;
 
-    @mixin footerParagrahps() {
-      color: white;
-      font-size: 0.8em;
-      margin: 0;
-      margin-bottom: 3%;
-      margin-left: 10%;
-      font-weight: 100;
-      cursor: pointer;
-    }
+      :nth-child(1) {
+        margin-top: 7%;
+        margin-bottom: 10%;
+        color: white;
+        margin-left: 10%;
+        font-weight: 200;
+        font-size: 1.3em;
+        width: 100%;
+        border-bottom: solid 1px white;
+      }
 
-    :nth-child(2) {
-      @include footerParagrahps();
-    }
+      li {
+        color: white;
+        font-size: 0.8em;
+        margin: 0;
+        margin-bottom: 3%;
+        margin-left: 10%;
+        font-weight: 100;
+        text-decoration: none;
+        cursor: pointer;
+      }
 
-    :nth-child(3) {
-      @include footerParagrahps();
-    }
-
-    :nth-child(4) {
-      @include footerParagrahps();
-      margin-bottom: 5%;
+      :nth-child(4) {
+        margin-bottom: 5%;
+      }
     }
   }
   .footer-logo {
@@ -427,7 +423,7 @@ header {
 
     p {
       color: white;
-      font-size: 1.9em;
+      font-size: 1.5em;
       align-self: flex-end;
       margin: 0;
       margin-bottom: 3%;
