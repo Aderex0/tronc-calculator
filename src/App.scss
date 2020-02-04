@@ -56,12 +56,11 @@ $generic-bg: rgba(102, 51, 153, 1);
 .App {
   display: grid;
   width: 100%;
-  height: 100vh;
   grid-template-areas:
     'header header'
     'A1 A2'
-    'B1 B2';
-  // grid-template-rows: 7% 58% 35%;
+    'B1 B2'
+    'intro intro';
   grid-template-columns: 320px 1fr;
 
   .tools-container {
@@ -259,6 +258,7 @@ header {
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
+  height: 100vh;
 }
 
 #tronc-btn-container {
@@ -325,6 +325,28 @@ header {
   .fp-text-container :nth-child(3) {
     @include frontPageSecondParagraph();
   }
+}
+
+/* Tools Container
+    -------------------------------------------- */
+
+.intro-container {
+  width: 100%;
+  height: 40vh;
+  min-height: 225px;
+  display: flex;
+  justify-content: flex-end;
+  grid-area: intro;
+  background-color: rgba(64, 224, 208, 0.8);
+}
+
+.intro-text {
+  align-self: center;
+  justify-self: flex-end;
+  width: 60%;
+  padding-right: 5%;
+  font-size: 1.6em;
+  line-height: 1.3em;
 }
 
 /* Tools Container

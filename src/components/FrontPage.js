@@ -33,6 +33,15 @@ export const FrontPage = () => {
           </div>
         </div>
       </div>
+      <div className='intro-container'>
+        <p className='intro-text'>
+          Welcome to Tronc Calculator! Tronc is a system that restaurants use in
+          order to split the service charge between working staff. There are a
+          fair number of restaurants that employ tronc system to work and if you
+          are a waiter that works that works with tronc, this tool is exactly
+          what you need!
+        </p>
+      </div>
     </>
   )
 }
