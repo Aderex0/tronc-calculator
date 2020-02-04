@@ -42,6 +42,7 @@ export const FrontPage = () => {
           what you need!
         </p>
       </div>
+      <div className='footer-container'></div>
     </>
   )
 }

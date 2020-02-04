@@ -9,6 +9,9 @@ describe('Visits the website and checks if frontpage buttons works', () => {
   })
   it('frontpage should contain all the elements', () => {
     cy.get('.fp-text-container').should('have.length', 2)
-    cy.get('.intro-container').should('have.class', 'intro-text', 'required')
+    cy.get('.intro-container')
+      .children('.intro-text')
+      .should('exist')
+    cy.get('.footer-container')
   })
 })

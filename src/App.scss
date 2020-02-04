@@ -332,20 +332,18 @@ header {
 
 .intro-container {
   width: 100%;
-  height: 40vh;
-  min-height: 225px;
+  height: 60vh;
   display: flex;
   justify-content: flex-end;
   grid-area: intro;
-  background-color: rgba(64, 224, 208, 0.8);
+  // background-color: rgba(64, 224, 208, 0.8);
 }
 
 .intro-text {
-  align-self: center;
-  justify-self: flex-end;
-  width: 60%;
+  align-self: flex-end;
   padding-right: 5%;
-  font-size: 1.6em;
+  padding-left: 5%;
+  font-size: 1em;
   line-height: 1.3em;
 }
 
