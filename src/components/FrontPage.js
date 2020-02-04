@@ -49,22 +49,6 @@ export const FrontPage = () => {
           what you need!
         </p>
       </div>
-      <div className='footer-container'>
-        <div className='footer-options'>
-          <ul>
-            <li>Site map</li>
-            <li>> Tronc Calculator</li>
-            <li>> Earnings Calculator</li>
-            <li>> Contact us</li>
-          </ul>
-        </div>
-        <div className='footer-logo'>
-          <p>
-            Tronc <br />
-            Calculator
-          </p>
-        </div>
-      </div>
     </>
   )
 }
