@@ -375,6 +375,64 @@ header {
   width: 100%;
   background-color: black;
   height: 20vh;
+  display: flex;
+
+  .footer-options {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+
+    :nth-child(1) {
+      margin-top: 7%;
+      margin-bottom: 10%;
+      color: white;
+      margin-left: 10%;
+      font-weight: 200;
+      width: 100%;
+      border-bottom: solid 1px white;
+    }
+
+    @mixin footerParagrahps() {
+      color: white;
+      font-size: 0.8em;
+      margin: 0;
+      margin-bottom: 3%;
+      margin-left: 10%;
+      font-weight: 100;
+      cursor: pointer;
+    }
+
+    :nth-child(2) {
+      @include footerParagrahps();
+    }
+
+    :nth-child(3) {
+      @include footerParagrahps();
+    }
+
+    :nth-child(4) {
+      @include footerParagrahps();
+      margin-bottom: 5%;
+    }
+  }
+  .footer-logo {
+    height: 100%;
+    width: 45%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+
+    p {
+      color: white;
+      font-size: 1.9em;
+      align-self: flex-end;
+      margin: 0;
+      margin-bottom: 3%;
+    }
+  }
 }
 
 /* Tools Container

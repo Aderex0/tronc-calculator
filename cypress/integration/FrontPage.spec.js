@@ -19,5 +19,7 @@ describe('Visits the website and checks if frontpage buttons works', () => {
       .children('.circle')
       .should('exist')
     cy.get('.footer-container')
+      .children('.help-email')
+      .should('exist')
   })
 })
