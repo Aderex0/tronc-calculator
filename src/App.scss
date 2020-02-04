@@ -60,7 +60,8 @@ $generic-bg: rgba(102, 51, 153, 1);
     'header header'
     'A1 A2'
     'B1 B2'
-    'intro intro';
+    'intro intro'
+    'footer footer';
   grid-template-columns: 320px 1fr;
 
   .tools-container {
@@ -327,7 +328,7 @@ header {
   }
 }
 
-/* Tools Container
+/* Front Page introduction
     -------------------------------------------- */
 
 .intro-container {
@@ -336,7 +337,14 @@ header {
   display: flex;
   justify-content: flex-end;
   grid-area: intro;
-  // background-color: rgba(64, 224, 208, 0.8);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.intro-image {
+  align-self: flex-start;
+  width: 55%;
+  z-index: 2;
 }
 
 .intro-text {
@@ -345,6 +353,28 @@ header {
   padding-left: 5%;
   font-size: 1em;
   line-height: 1.3em;
+  text-align: center;
+}
+
+.circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  background-color: rgba(102, 51, 153, 0.3);
+  z-index: 1;
+  position: absolute;
+  margin-top: 10px;
+  border: none;
+}
+
+/* Footer
+    -------------------------------------------- */
+
+.footer-container {
+  grid-area: footer;
+  width: 100%;
+  background-color: black;
+  height: 20vh;
 }
 
 /* Tools Container
