@@ -339,12 +339,23 @@ header {
   grid-area: intro;
   flex-wrap: wrap;
   justify-content: center;
+
+  @include mediaQuery(600px) {
+    justify-content: center;
+    height: 50vh;
+  }
 }
 
 .intro-image {
   align-self: flex-start;
   width: 55%;
   z-index: 2;
+
+  @include mediaQuery(600px) {
+    width: 25%;
+    justify-self: flex-start;
+    align-self: center;
+  }
 }
 
 .intro-text {
@@ -354,17 +365,15 @@ header {
   font-size: 1em;
   line-height: 1.3em;
   text-align: center;
-}
 
-.circle {
-  width: 200px;
-  height: 200px;
-  border-radius: 100%;
-  background-color: rgba(102, 51, 153, 0.3);
-  z-index: 1;
-  position: absolute;
-  margin-top: 10px;
-  border: none;
+  @include mediaQuery(600px) {
+    align-self: center;
+    width: 65%;
+    font-size: 1.8em;
+    text-align: left;
+    padding: 0%;
+    padding-left: 5%;
+  }
 }
 
 /* Footer
