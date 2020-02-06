@@ -15,7 +15,7 @@ export const Footer = () => {
         </div>
         <div className='footer-logo'>
           <p>
-            Tronc <br />
+            © Tronc <br />
             Calculator
           </p>
         </div>

@@ -406,6 +406,11 @@ header {
         font-size: 1.3em;
         width: 100%;
         border-bottom: solid 1px white;
+
+        @include mediaQuery(600px) {
+          margin-bottom: 2%;
+          font-size: 1.7em;
+        }
       }
 
       li {
@@ -417,6 +422,11 @@ header {
         font-weight: 100;
         text-decoration: none;
         cursor: pointer;
+
+        @include mediaQuery(600px) {
+          margin-bottom: 1%;
+          font-size: 1.2em;
+        }
       }
 
       :nth-child(4) {
@@ -437,6 +447,10 @@ header {
       margin: 0;
       margin-bottom: 3%;
       margin-left: 10%;
+
+      @include mediaQuery(600px) {
+        font-size: 2.5em;
+      }
     }
   }
 }
