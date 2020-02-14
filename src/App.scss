@@ -344,6 +344,7 @@ header {
   background-image: url(./images/intro-background.jpg);
   background-size: cover;
   background-position: center;
+  align-content: center;
 
   @include mediaQuery(600px) {
     justify-content: center;
