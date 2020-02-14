@@ -129,6 +129,7 @@ export const EarningsCalculator = () => {
           handleChange={setShiftEnd}
           value={shiftEnd}
           testId={'earnings-shift-end'}
+          font-size='3vw'
         />
         <input
           className='calculate-earnings-btn'

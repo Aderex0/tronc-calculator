@@ -1,10 +1,9 @@
-import React from 'react'
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
-import { DateTimePicker } from '@material-ui/pickers'
 import { MuiPickersUtilsProvider } from '@material-ui/pickers'
 import { KeyboardDateTimePicker } from '@material-ui/pickers'
 import MomentUtils from '@date-io/moment'
+import React from 'react'
 
 const styles = {
   input: {
@@ -15,9 +14,14 @@ const styles = {
     marginBottom: '15px',
     width: '100%',
     marginTop: '5px',
-    textAlignLast: 'center'
+    textAlignLast: 'center',
+
+    '@media screen and (min-width: 600px)': {
+      fontSize: '3vw'
+    }
   }
 }
+
 const useDateTime = ({ classes, handleChange, value, testId }) => (
   <MuiPickersUtilsProvider utils={MomentUtils}>
     <KeyboardDateTimePicker
