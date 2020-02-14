@@ -380,10 +380,14 @@ header {
   @include mediaQuery(600px) {
     align-self: center;
     width: 65%;
-    font-size: 2vw;
+    font-size: 3vw;
     text-align: left;
     padding: 0%;
     padding-left: 5%;
+  }
+
+  @include mediaQuery(600px) {
+    font-size: 2vw;
   }
 }
 
