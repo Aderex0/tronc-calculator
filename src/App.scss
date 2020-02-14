@@ -334,12 +334,12 @@ header {
 
 .intro-container {
   width: 100%;
-  height: 60vh;
+  height: 45vh;
   display: flex;
-  justify-content: flex-end;
   grid-area: intro;
   flex-wrap: wrap;
   justify-content: center;
+  align-content: center;
   min-height: 400px;
   background-image: url(./images/intro-background.jpg);
   background-size: cover;
@@ -347,8 +347,13 @@ header {
 
   @include mediaQuery(600px) {
     justify-content: center;
-    height: 50vh;
+    height: 30vh;
     min-height: 300px;
+  }
+
+  @include mediaQuery(1025px) {
+    height: 50vh;
+    min-height: 450px;
   }
 }
 
@@ -375,10 +380,14 @@ header {
   @include mediaQuery(600px) {
     align-self: center;
     width: 65%;
-    font-size: 2vw;
+    font-size: 3vw;
     text-align: left;
     padding: 0%;
     padding-left: 5%;
+  }
+
+  @include mediaQuery(600px) {
+    font-size: 2vw;
   }
 }
 
@@ -414,7 +423,7 @@ header {
       :nth-child(1) {
         margin: 0;
         margin-top: 7%;
-        margin-bottom: 10%;
+        margin-bottom: 4%;
         color: white;
         font-weight: 200;
         font-size: 1.3em;
