@@ -36,7 +36,7 @@ export const Sidebar = () => {
       </div>
       <ul>
         <Link to='/tools/tronc-calculator'>
-          <li data-testid='sidebar-tronc-click'>
+          <li data-testid='sidebar-tronc-click' onClick={() => toggleSidebar()}>
             <span>
               <IoIosCalculator size='30px' viewBox='0 0 470 470' />
             </span>
@@ -44,7 +44,10 @@ export const Sidebar = () => {
           </li>
         </Link>
         <Link to='/tools/earnings-calculator'>
-          <li data-testid='sidebar-earnings-click'>
+          <li
+            data-testid='sidebar-earnings-click'
+            onClick={() => toggleSidebar()}
+          >
             <span>
               <GiReceiveMoney size='30px' />
             </span>
