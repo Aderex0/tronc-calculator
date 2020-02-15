@@ -492,7 +492,19 @@ header {
   }
 }
 
-/* Tronc Calculator form \ Earnings Calculator form
+/* Contact us 
+    -------------------------------------------- */
+
+.contact-us-form {
+  grid-area: 2 / 1 / 5 / 3;
+
+  @include mediaQuery(600px) {
+    grid-area: 2 / 2 / 4 / 3;
+    border-left: rgba(102, 51, 153, 0.3) 1px solid;
+  }
+}
+
+/* Tronc Calculator form \ Earnings Calculator form \ Contact us form
     -------------------------------------------- */
 
 form {
@@ -533,14 +545,15 @@ input {
   appearance: none;
 }
 
-input[type='number'] {
+// adjust form inputs
+@mixin inputs($width) {
   height: 65px;
   text-align: center;
   border: 1px solid turquoise;
   font-size: 6vw;
   color: black;
   margin-bottom: 15px;
-  width: 35%;
+  width: $width;
   margin-top: 5px;
 
   &:focus {
@@ -554,6 +567,25 @@ input[type='number'] {
     padding-left: 20px;
     width: 31%;
   }
+}
+
+input[type='number'] {
+  @include inputs(35%);
+}
+input[type='text'] {
+  @include inputs(80%);
+}
+
+.contact-us-details {
+  height: 200px !important;
+}
+
+input[type='email'] {
+  @include inputs(80%);
+}
+
+select {
+  @include inputs(80%);
 }
 
 input[type='submit'] {
