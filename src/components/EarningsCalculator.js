@@ -8,7 +8,6 @@ import { EarningsResult } from './EarningsResult'
 export const EarningsCalculator = () => {
   const {
     troncPercent,
-    setTroncPercent,
     handleTroncPercent,
     serviceCharge,
     setServiceCharge,
@@ -20,7 +19,6 @@ export const EarningsCalculator = () => {
     setCashTips,
     handleCashTips,
     hourlyRate,
-    setHourlyRate,
     handleHourlyRate,
     shiftStart,
     setShiftStart,
@@ -138,7 +136,15 @@ export const EarningsCalculator = () => {
           value='Calculate!'
         />
       </form>
-      {earningsCalculation ? <EarningsResult /> : null}
+      {earningsCalculation ? (
+        <EarningsResult
+          setServiceCharge={setServiceCharge}
+          setChecksPaid={setChecksPaid}
+          setCashTips={setCashTips}
+          setShiftStart={setShiftStart}
+          setShiftEnd={setShiftEnd}
+        />
+      ) : null}
     </>
   )
 }

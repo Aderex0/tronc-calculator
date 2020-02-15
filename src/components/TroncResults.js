@@ -2,11 +2,8 @@ import React, { useEffect } from 'react'
 import useCalculatorStore from '../store/CalculatorStore'
 import useContentStore from '../store/ContentStore'
 
-export const TroncResults = ({
-  setTroncPercentage,
-  setServiceCharge,
-  setChecksPaid
-}) => {
+export const TroncResults = ({ setServiceCharge, setChecksPaid }) => {
+  // scrolls to button when calculate tronc is clicked to see the results
   useEffect(() => {
     window.scrollTo(0, 1000)
   }, [])
@@ -16,7 +13,6 @@ export const TroncResults = ({
 
   const resetTroncCalculator = () => {
     setDisplayResult(false)
-    setTroncPercentage(3.75)
     setServiceCharge(0)
     setChecksPaid(0)
   }

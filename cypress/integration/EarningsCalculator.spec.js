@@ -10,6 +10,8 @@ describe('Visits the website, clicks on earnings calculator, calculates total ea
   const sales = checksPaid - serviceCharge
   const tronc = serviceCharge - (sales / 100) * troncPercentage
   const hourlyPay = (430 / 60) * hourlyRate
+  //formating date by moment
+  const dateNow = Cypress.moment().format('DD/MM/YYYY HH:mm')
 
   it('enters all the earnings input fields correctly and gets the result', () => {
     cy.visit(url)
@@ -39,6 +41,31 @@ describe('Visits the website, clicks on earnings calculator, calculates total ea
     cy.get('[data-testid="calculate-earnings-btn"]').click()
     cy.get('[data-testid="total-earnings').contains(
       (tronc + cashTips + hourlyPay).toFixed(2)
+    )
+  })
+
+  it('clicks refresh and removes the results component', () => {
+    cy.get('[data-testid="reset-page"]').click()
+    cy.get('[data-testid="remaining-service').should('not.exist')
+  })
+
+  it('resets earnings calculator input fields', () => {
+    cy.get('[data-testid="earnings-service-charge-field"]').should(
+      'have.value',
+      '0'
+    )
+    cy.get('[data-testid="earnings-checks-paid-field"]').should(
+      'have.value',
+      '0'
+    )
+    cy.get('[data-testid="earnings-cash-tips"]').should('have.value', '0')
+    cy.get('[data-testid="earnings-shift-start"] > div:first > input').should(
+      'have.value',
+      dateNow
+    )
+    cy.get('[data-testid="earnings-shift-end"] > div:first > input').should(
+      'have.value',
+      dateNow
     )
   })
 })
