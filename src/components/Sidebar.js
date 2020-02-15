@@ -6,7 +6,7 @@ import { GiReceiveMoney } from 'react-icons/gi'
 import { Link } from 'react-router-dom'
 
 export const Sidebar = () => {
-  const toggleSidebar = () => {
+  const toggleSidebarBtn = () => {
     const btn = document.getElementsByClassName('sidebar-container')[0]
     const header = document.getElementsByTagName('header')[0]
     const tools = document.getElementsByClassName('tools-container')[0]
@@ -25,18 +25,30 @@ export const Sidebar = () => {
       : (tools.style.marginTop = '50px')
   }
 
+  const closeSidebar = () => {
+    if (window.matchMedia('(max-width: 600px)')) {
+      const btn = document.getElementsByClassName('sidebar-container')[0]
+      const header = document.getElementsByTagName('header')[0]
+      const tools = document.getElementsByClassName('tools-container')[0]
+
+      btn.style.left = '-250px'
+      header.style.position = 'relative'
+      tools.style.marginTop = '0px'
+    }
+  }
+
   return (
     <div className='sidebar-container' style={{ left: '-250px' }}>
       <div
         className='toggle-btn'
         data-testid='sidebar-action'
-        onClick={() => toggleSidebar()}
+        onClick={() => toggleSidebarBtn()}
       >
         <IoIosMenu size='50px' color='rgb(102, 51, 153)' />
       </div>
       <ul>
         <Link to='/tools/tronc-calculator'>
-          <li data-testid='sidebar-tronc-click' onClick={() => toggleSidebar()}>
+          <li data-testid='sidebar-tronc-click' onClick={() => closeSidebar()}>
             <span>
               <IoIosCalculator size='30px' viewBox='0 0 470 470' />
             </span>
@@ -46,7 +58,7 @@ export const Sidebar = () => {
         <Link to='/tools/earnings-calculator'>
           <li
             data-testid='sidebar-earnings-click'
-            onClick={() => toggleSidebar()}
+            onClick={() => closeSidebar()}
           >
             <span>
               <GiReceiveMoney size='30px' />
