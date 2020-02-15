@@ -35,8 +35,7 @@ describe('Visits the website, chooses tronc calculator, return results and refre
   })
 
   it('resets tronc calculator input fields', () => {
-    cy.get('[data-testid="tronc-percentage-field"]').should('contain', '')
-    cy.get('[data-testid="service-charge-field"]').should('contain', '')
-    cy.get('[data-testid="checks-paid-field"]').should('contain', '')
+    cy.get('[data-testid="service-charge-field"]').should('have.value', '0')
+    cy.get('[data-testid="checks-paid-field"]').should('have.value', '0')
   })
 })

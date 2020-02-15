@@ -7,7 +7,6 @@ import useContentStore from '../store/ContentStore'
 export const TroncCalculator = () => {
   const {
     troncPercent,
-    setTroncPercent,
     handleTroncPercent,
     serviceCharge,
     setServiceCharge,
@@ -81,7 +80,6 @@ export const TroncCalculator = () => {
       </form>
       {displayResult && (
         <TroncResults
-          setTroncPercentage={setTroncPercent}
           setServiceCharge={setServiceCharge}
           setChecksPaid={setChecksPaid}
         />
