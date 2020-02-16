@@ -41,7 +41,8 @@ export const ContactUs = () => {
   return (
     <div className='contact-us-form'>
       <h2>Contact us</h2>
-      <form onSubmit={e => handleSubmit(e)}>
+      <form>
+        {/* onSubmit={e => handleSubmit(e)} */}
         <label id='Sb'>Subject</label>
         <span data-test-id='contact-us-sb-span'>
           {subject === 'choose' && 'Must choose a subject'}

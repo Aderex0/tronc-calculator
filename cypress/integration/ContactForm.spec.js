@@ -73,9 +73,25 @@ describe('visists the contact form and sends a contact request sucessfully', () 
   })
 
   it('finds the email field, inputs name and changes colors accordingly', () => {
+    cy.get('[data-testid="contact-us-em-span"]').contains('Optional')
     cy.get('[data-testid="contact-us-email"]')
       .should('not.have.class', 'invalid')
+      .type('wong@')
+      .should('have.class', 'invalid')
+
+    cy.get('[data-testid="contact-us-em-span"]').contains('Enter a valid email')
+
+    cy.get('[data-testid="contact-us-email"]')
+      .clear()
+      .should('not.have.class', 'invalid')
+
+    cy.get('[data-testid="contact-us-em-span"]').contains('Optional')
+
+    cy.get('[data-testid="contact-us-email"]')
       .type('wong@gmail.com')
+      .should('not.have.class', 'invalid')
+
+    cy.get('[data-testid="contact-us-em-span"]').should('not.contain.text')
   })
 
   it('finds the description field, inputs name and changes colors accordingly', () => {
