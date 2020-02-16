@@ -1,67 +1,51 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
+import { useContactUs } from '../hooks/useContactUs'
 
 export const ContactUs = () => {
-  const [name, setName] = useState('')
-  useEffect(() => {
-    name.length < 2
-      ? document.querySelector('.contact-us-name').classList.add('invalid')
-      : document.querySelector('.contact-us-name').classList.remove('invalid')
-  }, [name])
+  const {
+    name,
+    email,
+    details,
+    subject,
+    setName,
+    setEmail,
+    setDetails,
+    setSubject
+  } = useContactUs()
 
-  const [email, setEmail] = useState('')
-  const [subject, setSubject] = useState('choose')
+  const handleSubmit = e => {
+    e.preventDefault()
+    const templateId = 'template_5zYmlukf'
 
-  useEffect(() => {
-    subject === 'choose'
-      ? document.querySelector('.contact-us-subject').classList.add('invalid')
-      : document
-          .querySelector('.contact-us-subject')
-          .classList.remove('invalid')
+    sendFeedback(templateId, {
+      message_html: details,
+      from_name: name,
+      reply_to: email,
+      regards_to: subject
+    })
+  }
 
-    subject === 'error'
-      ? document.querySelector('.contact-us-email').classList.add('invalid')
-      : document.querySelector('.contact-us-email').classList.remove('invalid')
-  }, [subject])
-
-  const [details, setDetails] = useState('')
-  useEffect(() => {
-    details.length < 1
-      ? document.querySelector('.contact-us-details').classList.add('invalid')
-      : document
-          .querySelector('.contact-us-details')
-          .classList.remove('invalid')
-  }, [details])
-
+  const sendFeedback = (templateId, variables) => {
+    window.emailjs
+      .send('tronc_calculator_gmail_com', templateId, variables)
+      .then(res => {
+        console.log('Email sent success')
+      })
+      .catch(err =>
+        console.error(
+          'Oh well, you failed. Here some thoughts on the error that occured:',
+          err
+        )
+      )
+  }
   return (
     <div className='contact-us-form'>
       <h2>Contact us</h2>
-      <form>
-        <label id='Nm'>Name</label>
-        <span>{name.length < 2 && 'Minimum 2 characters'}</span>
-        <input
-          type='text'
-          id='Nm'
-          className='contact-us-name'
-          data-testid='contact-us-name'
-          value={name}
-          onChange={e => setName(e.target.value)}
-        ></input>
-        <label id='Em'>Email</label>
-        <span>
-          {subject === 'error' ? 'We require an email for errors' : 'optional'}
-        </span>
-        <input
-          type='email'
-          id='Em'
-          value={email}
-          className='contact-us-email'
-          data-testid='contact-us-email'
-          onChange={e => {
-            setEmail(e.target.value)
-          }}
-        ></input>
+      <form onSubmit={e => handleSubmit(e)}>
         <label id='Sb'>Subject</label>
-        <span>{subject === 'choose' && 'Must choose a subject'}</span>
+        <span data-test-id='contact-us-sb-span'>
+          {subject === 'choose' && 'Must choose a subject'}
+        </span>
         <select
           id='Sb'
           className='contact-us-subject'
@@ -75,6 +59,38 @@ export const ContactUs = () => {
           <option value='error'>Reporting an error</option>
           <option value='other'>Contacting for other reasons</option>
         </select>
+        <label id='Nm'>Name</label>
+        <span data-test-id='contact-us-nm-span'>
+          {name.length < 2 && 'Minimum 2 characters'}
+        </span>
+        <input
+          type='text'
+          id='Nm'
+          className='contact-us-name'
+          data-testid='contact-us-name'
+          value={name}
+          onChange={e => setName(e.target.value)}
+        ></input>
+        <label id='Em'>Email</label>
+        <span data-testid='contact-us-em-span'>
+          {subject === 'error'
+            ? 'We require a valid email for errors'
+            : /^.+@.+\..+$/.test(email)
+            ? null
+            : /^.+@.+\..+$/.test(email) || email.length !== 0
+            ? 'Enter a valid email'
+            : 'Optional'}
+        </span>
+        <input
+          type='email'
+          id='Em'
+          value={email}
+          className='contact-us-email'
+          data-testid='contact-us-email'
+          onChange={e => {
+            setEmail(e.target.value)
+          }}
+        ></input>
         <label id='Dt'>Details</label>
         <span>{details.length}/800</span>
         <textarea
