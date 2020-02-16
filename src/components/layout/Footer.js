@@ -13,11 +13,10 @@ export const Footer = () => {
             </Link>
             <Link to='/tools/earnings-calculator'>
               <span data-testid='footer-earnings-calc'>
-                {' '}
                 Earnings Calculator
               </span>
             </Link>
-            <Link to=''>
+            <Link to='/contact-us'>
               <span data-testid='footer-contact-us'> Contact us</span>
             </Link>
           </div>

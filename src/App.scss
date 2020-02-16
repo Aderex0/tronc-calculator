@@ -492,7 +492,106 @@ header {
   }
 }
 
-/* Tronc Calculator form \ Earnings Calculator form
+/* Contact us form
+    -------------------------------------------- */
+
+.contact-us-form {
+  grid-area: 2 / 1 / 5 / 3;
+  width: 85%;
+  justify-self: center;
+
+  @include mediaQuery(600px) {
+    grid-area: 2 / 2 / 4 / 3;
+    border-left: rgba(102, 51, 153, 0.3) 1px solid;
+  }
+
+  h2 {
+    align-self: flex-end;
+    margin-bottom: 0;
+    color: $generic-bg;
+  }
+
+  form {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    padding-top: 20px;
+    width: 100%;
+
+    @include mediaQuery(600px) {
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding-left: 5%;
+      padding-top: 20px;
+    }
+
+    @mixin inputs() {
+      height: 65px;
+      border: 1px solid turquoise;
+      font-size: 6vw;
+      color: black;
+      margin-bottom: 15px;
+      width: 100%;
+      margin-top: 5px;
+
+      &:focus {
+        outline: 3px solid turquoise;
+      }
+
+      @include mediaQuery(600px) {
+        font-size: 3vw;
+        margin-top: 10px;
+        text-align: start;
+        padding-left: 20px;
+        width: 31%;
+      }
+    }
+
+    label {
+      color: black;
+      font-size: 6vw;
+      font-family: 'Poppins';
+      align-self: flex-start;
+
+      @include mediaQuery(600px) {
+        font-size: 3vw;
+      }
+    }
+
+    input[type='text'] {
+      @include inputs();
+      padding-left: 5px;
+    }
+
+    input[type='email'] {
+      @include inputs();
+      padding-left: 5px;
+    }
+
+    textarea {
+      @include inputs();
+      height: 200px;
+      resize: none;
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+
+    select {
+      @include inputs();
+    }
+  }
+}
+
+.invalid {
+  border: 2px solid red !important;
+  &:focus {
+    outline: 3px solid red !important;
+  }
+}
+/* Tronc Calculator form \ Earnings Calculator form 
     -------------------------------------------- */
 
 form {
@@ -517,6 +616,7 @@ form {
   }
 }
 
+// general labels
 label {
   color: black;
   font-size: 6vw;
@@ -533,14 +633,14 @@ input {
   appearance: none;
 }
 
-input[type='number'] {
+@mixin inputs() {
   height: 65px;
   text-align: center;
   border: 1px solid turquoise;
   font-size: 6vw;
   color: black;
   margin-bottom: 15px;
-  width: 35%;
+  width: 40%;
   margin-top: 5px;
 
   &:focus {
@@ -554,6 +654,12 @@ input[type='number'] {
     padding-left: 20px;
     width: 31%;
   }
+}
+
+// adjust form inputs
+
+input[type='number'] {
+  @include inputs();
 }
 
 input[type='submit'] {

@@ -1,18 +1,14 @@
 /// <reference types="cypress" />
 
 describe('Visits the website, chooses tronc calculator, return results and refreshes', () => {
-  const url = 'http://localhost:3000'
+  const url = 'http://localhost:3000/tools/tronc-calculator'
   const troncPercentage = 3.75
   const checksPaid = 1543.59
   const serviceCharge = 165.4
   const sales = checksPaid - serviceCharge
 
-  it('finds two buttons clicks tronc calculator button', () => {
+  it('it visit the website, enters tronc fields, calculates the tronc and show the results component', () => {
     cy.visit(url)
-    cy.get('[data-testid="tronc-btn"]').click()
-  })
-
-  it('enters tronc fields, calculates the tronc and show the results component', () => {
     cy.get('[data-testid="tronc-percentage-field"]')
       .clear()
       .type(troncPercentage.toString())

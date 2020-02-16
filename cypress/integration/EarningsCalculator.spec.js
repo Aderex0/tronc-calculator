@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
 describe('Visits the website, clicks on earnings calculator, calculates total earnings and refreshes', () => {
-  const url = 'http://localhost:3000'
+  const url = 'http://localhost:3000/tools/earnings-calculator'
   const troncPercentage = 3.75
   const checksPaid = 1543.59
   const serviceCharge = 165.4
@@ -13,9 +13,8 @@ describe('Visits the website, clicks on earnings calculator, calculates total ea
   //formating date by moment
   const dateNow = Cypress.moment().format('DD/MM/YYYY HH:mm')
 
-  it('enters all the earnings input fields correctly and gets the result', () => {
+  it('visit the page, enters all the earnings input fields correctly and gets the result', () => {
     cy.visit(url)
-    cy.get('[data-testid="earnings-btn"]').click()
     cy.get('[data-testid="earnings-tronc-percentage-field"]')
       .clear()
       .type(troncPercentage.toString())
