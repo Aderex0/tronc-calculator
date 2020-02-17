@@ -2,6 +2,7 @@ import React from 'react'
 import { FrontPage } from '../FrontPage'
 import { Tools } from '../Tools'
 import { ContactUs } from '../ContactUs'
+import { ContactUsMessage } from '../ContactUsMessage'
 import { Route, withRouter } from 'react-router-dom'
 
 export const Content = () => {
@@ -16,6 +17,10 @@ export const Content = () => {
       <Route
         path='/contact-us'
         render={routerProps => <ContactUs {...routerProps} />}
+      />
+      <Route
+        path='/contact-us/success'
+        render={routerProps => <ContactUsMessage {...routerProps} />}
       />
     </>
   )
