@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const ContactUsMessage = () => {
+export const ContactUsSuccess = () => {
   return (
     <div>
       <p>
