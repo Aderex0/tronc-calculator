@@ -110,10 +110,17 @@ describe('visists the contact form and sends a contact request sucessfully', () 
       .type('This is a test email')
   })
 
-  it('submits the form and displays a success message, clicks to go back to frontpage', () => {
-    cy.get('[data-testid="contact-us-submit"]')
+  it('submits the form, displays an error then displays a success message, clicks to go back to frontpage', () => {
+    cy.get('[data-testid="contact-us-details"]').clear()
+    cy.get('[data-testid="contact-us-submit"]').click()
+    cy.get('[data-test-id="cf-error-span"]').contains(
+      'Form completed incorrectly!'
+    )
+    cy.get('[data-testid="contact-us-details"]').type('This is a test email')
+    cy.get('[data-testid="contact-us-submit"]').click()
     // cy.get('[data-testid="contact-us-success-msg"]').contains(
-    //   'Thank you for your submission. We will have a look at the query as soon as possible'
+    //   'Thank you for your submission. We will deal with your query as soon as
+    // possible'
     // )
     // cy.get('[data-testid="contact-us-back-btn"]').click()
   })
