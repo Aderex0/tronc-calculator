@@ -6,6 +6,7 @@ describe('Visits the website and checks if frontpage buttons works', () => {
   it('clicks the logo to return to frontpage', () => {
     cy.visit(url)
     cy.get('[data-testid="frontpage-return"]').click()
+    cy.url().should('include', url)
   })
   it('frontpage should contain all the elements', () => {
     cy.get('.fp-text-container').should('have.length', 2)

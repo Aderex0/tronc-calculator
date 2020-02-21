@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useContactUs } from '../hooks/useContactUs'
 import { ContactUsMessage } from './ContactUsMessage'
 
-export const ContactUs = props => {
+export const ContactUs = () => {
   const {
     name,
     email,
@@ -123,7 +123,7 @@ export const ContactUs = props => {
           </form>
         </div>
       ) : (
-        <ContactUsMessage messageId={setRenderPage[1]} />
+        <ContactUsMessage messageId={renderPage[1]} />
       )}
     </>
   )
