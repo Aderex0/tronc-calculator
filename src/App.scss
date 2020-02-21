@@ -614,6 +614,48 @@ header {
     outline: 3px solid red !important;
   }
 }
+
+.cf-message-success {
+  div {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    span {
+      text-align: center;
+      margin-top: 25px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      align-self: center;
+      width: 80%;
+      text-align: center;
+      font-size: 7vw;
+      line-height: 1.1em;
+    }
+
+    .cf-btn-container {
+      display: flex;
+      flex-direction: row;
+    }
+
+    button {
+      height: 65px;
+      background-color: $generic-bg;
+      font-size: 6vw;
+      width: 40vw;
+      color: white;
+      border: none;
+      margin: 10px;
+      font-family: 'Poppins';
+      align-self: center;
+      line-height: 1em;
+    }
+  }
+}
 /* Tronc Calculator form \ Earnings Calculator form 
     -------------------------------------------- */
 
