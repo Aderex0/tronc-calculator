@@ -122,9 +122,8 @@ export const ContactUs = () => {
             )}
           </form>
         </div>
-      ) : (
-        <ContactUsMessage messageId={renderPage[1]} />
-      )}
+      ) : // <ContactUsMessage messageId={renderPage[1]} />
+      null}
     </>
   )
 }
