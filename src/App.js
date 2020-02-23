@@ -8,10 +8,9 @@ import { Footer } from './components/layout/Footer'
 export const App = () => {
   return (
     <div className='App'>
-      {/* <Header />
+      <Header />
       <Content />
-      <Footer /> */}
-      <p>Hi</p>
+      <Footer />
     </div>
   )
 }
