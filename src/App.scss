@@ -616,6 +616,7 @@ header {
 }
 
 .cf-message-success {
+  grid-area: 2 / 1 / 5 / 3;
   div {
     display: flex;
     width: 100%;
@@ -777,7 +778,7 @@ input[type='submit'] {
 
   @include mediaQuery(600px) {
     left: 0px !important;
-    width: 325px;
+    width: 320px;
     position: relative;
     border-right: none;
     height: 93vh;

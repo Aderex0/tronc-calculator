@@ -4,7 +4,7 @@ import { EarningsCalculator } from './EarningsCalculator'
 import { Sidebar } from './Sidebar'
 import { Route } from 'react-router-dom'
 
-export const Tools = () => {
+export const Tools = props => {
   return (
     <>
       <Sidebar />

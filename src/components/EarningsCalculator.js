@@ -5,7 +5,7 @@ import moment from 'moment'
 import useCalculatorStore from '../store/CalculatorStore'
 import { EarningsResult } from './EarningsResult'
 
-export const EarningsCalculator = () => {
+export const EarningsCalculator = props => {
   const {
     troncPercent,
     handleTroncPercent,

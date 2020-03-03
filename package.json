@@ -31,7 +31,11 @@
     "extends": "react-app"
   },
   "browserslist": {
-    "production": [">0.2%", "not dead", "not op_mini all"],
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
@@ -39,6 +43,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react-router": "^5.1.4",
     "babel-eslint": "^10.0.3",
     "cypress": "^3.8.1",
     "eslint": "^6.8.0",

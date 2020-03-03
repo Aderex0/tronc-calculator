@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import IntroCalculator from '../images/intro-calculator.png'
 
-export const FrontPage = () => {
+export const FrontPage = props => {
   return (
     <>
       <div id='mobile-cover-img'></div>

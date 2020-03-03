@@ -4,7 +4,7 @@ import { useCalculator } from '../hooks/useCalculator'
 import useCalculatorStore from '../store/CalculatorStore'
 import useContentStore from '../store/ContentStore'
 
-export const TroncCalculator = () => {
+export const TroncCalculator = props => {
   const {
     troncPercent,
     handleTroncPercent,
